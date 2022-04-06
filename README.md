@@ -1,4 +1,18 @@
-# eks-karpenter-workshop
+# Karpenter Workshop - Demo
+
+1. Lab Environment 
+2. Manual Setup Walkthrough
+3. Demo Scenarios
+    1. Initial deployment
+    2. Scaling deployment.
+    3. Deployment with a higher resource requirements.
+    4. Deployment with ARM containers.
+    5. Faster Provisioning
+    6. Node Cleanup
+
+
+
+## Lab Environment
 
 For this workshop, We will be creating two EKS Clusters. 
 
