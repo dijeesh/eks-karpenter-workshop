@@ -1,6 +1,6 @@
 locals {
   environment          = "acme-karpenter" 
-  account-id           = "719756272988"
+  account-id           = "XXXXXXXXXXXX"
   vpc_cidr             = "10.201.0.0/16"
   application_vpc_name = "vpc-acme-karpenter-us-east-1"
   tenancy              = "dedicated"
