@@ -2,12 +2,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment-arm
+  name: nginx-deployment
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 2 # tells deployment to run 2 pods matching the template
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,12 @@ spec:
       containers:
       - name: nginx
         image: nginx
+        resources: 
+          requests: 
+            memory: "256Mi"
+            cpu: "500"
+          limits:
+            memory: "256Mi"
+            cpu: "500"
         ports:
         - containerPort: 80
-      nodeSelector:
-        kubernetes.io/arch: arm64
