@@ -39,6 +39,7 @@ KarpenterNodeRole = KarpenterNodeRole-YOUR-EKS-CLUSTER-NAME
 
 - User this [cloudformation template](https://raw.githubusercontent.com/dijeesh/eks-karpenter-workshop/main/src/karpenter-iam-cloudformation.yamlhttps://raw.githubusercontent.com/dijeesh/eks-karpenter-workshop/main/src/karpenter-iam-cloudformation.yaml) to provision IAM resources except KarpenterControllerRole
 - Make sure to update your EKS Cluster Name. Replace `YOUR-EKS-CLUSTER-NAME` with your Cluster Name.
+
 <br>
 
 ### **4. Edit aws-config configMap** 
@@ -55,6 +56,8 @@ Edit aws-config configMap in kube-system namespace and provide enough permission
 ```
 
 Replace `YOUR-EKS-CLUSTER-NAME` and `YOUR-ACCOUNT-ID` and append the above snippet under mapRoles.
+
+<br><br>
 
 ### **5. Create the KarpenterController IAM Role**
 
@@ -87,11 +90,15 @@ Go to IAM Console > Roles > Create Role > KarpenterControllerRole-YOUR-EKS-CLUST
 ```
 - In the permissions, select KarpenterControllerPolicy-YOUR-EKS-CLUSTER-NAME	IAM policy we created in Step 3.
 
+<br><br>
+
 ### **6. Create the EC2 Spot Service Linked Role**
 
 ```
 aws iam create-service-linked-role --aws-service-name spot.amazonaws.com || true
 ```
+
+<br><br>
 
 ### **7. Install Karpenter Helm Chart**
 
@@ -116,6 +123,8 @@ helm upgrade --install --namespace karpenter --create-namespace \
 Make sure to replace the values for YOUR-EKS-CLUSTER-NAME, YOUR-ACCOUNT-ID, YOUR-EKS-API-ENDPOINT
 
 Make sure to set the latest version for Karpenter Chart.
+
+<br> <br>
 
 ### **8. Deploy Provisioner**
 
