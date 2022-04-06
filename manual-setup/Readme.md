@@ -1,4 +1,4 @@
-# Steps for deploying karpenter.sh Cluster AutoScaler on your existing EKS Clusters.
+# Steps for deploying karpenter on your existing EKS Clusters.
 
 ### **1. Create tags for your EKS Cluster**
 <br>

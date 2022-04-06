@@ -19,9 +19,9 @@ spec:
         resources: 
           requests: 
             memory: "256Mi"
-            cpu: "500"
+            cpu: "400m"
           limits:
             memory: "256Mi"
-            cpu: "500"
+            cpu: "400m"
         ports:
         - containerPort: 80
