@@ -3,7 +3,9 @@
 For this workshop, We will be creating two EKS Clusters. 
 
 <center>
-![](https://github.com/dijeesh/eks-karpenter-workshop/blob/60124ee394f45c2e251c8638d0805440e8a5fdc5/src/karepnter-demo.png)
+
+    ![image](https://github.com/dijeesh/eks-karpenter-workshop/blob/60124ee394f45c2e251c8638d0805440e8a5fdc5/src/karepnter-demo.png)
+
 </center>
 
 | # | Cluster | Description  |
