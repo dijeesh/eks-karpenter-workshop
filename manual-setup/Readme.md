@@ -1,6 +1,7 @@
 # Steps for deploying karpenter.sh Cluster AutoScaler on your existing EKS Clusters.
 
 ### **1. Create tags for your EKS Cluster**
+<br>
 Go to EKS Console > Select Cluster > Configuration > Tag > Manage Tags
     
 Add `karpenter.sh/discovery=YOUR-EKS-CLUSTER-NAME`
@@ -9,6 +10,7 @@ Add `karpenter.sh/discovery=YOUR-EKS-CLUSTER-NAME`
 
 ### **2. Create tags for your VPC Subnets**
 
+<br>
 Go to VPC Console > Select Subnets >  Tags > Manage Tags
     
 Add `karpenter.sh/discovery=YOUR-EKS-CLUSTER-NAME`
@@ -18,8 +20,8 @@ Add tags for the VPC Subnets in which you are planning to provision the EKS Work
 <br>
 
 ### **3. Create IAM Resources**
-    
-    
+
+<br>
 
 | Resource | Description| 
 | -------- | -------- | 
@@ -44,6 +46,7 @@ KarpenterNodeRole = KarpenterNodeRole-YOUR-EKS-CLUSTER-NAME
 
 ### **4. Edit aws-config configMap** 
 
+<br>
 Edit aws-config configMap in kube-system namespace and provide enough permission for KarpenterNodeRole IAM Role
 
 ```
@@ -61,7 +64,7 @@ Replace `YOUR-EKS-CLUSTER-NAME` and `YOUR-ACCOUNT-ID` and append the above snipp
 
 ### **5. Create the KarpenterController IAM Role**
 
-IAM role to be associated with the Kubernetes service account used by Karpenter.
+<br>IAM role to be associated with the Kubernetes service account used by Karpenter.
 
 Go to IAM Console > Roles > Create Role > KarpenterControllerRole-YOUR-EKS-CLUSTER-NAME
 
@@ -94,6 +97,8 @@ Go to IAM Console > Roles > Create Role > KarpenterControllerRole-YOUR-EKS-CLUST
 
 ### **6. Create the EC2 Spot Service Linked Role**
 
+<br>
+
 ```
 aws iam create-service-linked-role --aws-service-name spot.amazonaws.com || true
 ```
@@ -101,6 +106,8 @@ aws iam create-service-linked-role --aws-service-name spot.amazonaws.com || true
 <br><br>
 
 ### **7. Install Karpenter Helm Chart**
+
+<br>
 
 ```
 helm repo add karpenter https://charts.karpenter.sh/
@@ -127,6 +134,8 @@ Make sure to set the latest version for Karpenter Chart.
 <br> <br>
 
 ### **8. Deploy Provisioner**
+
+<br>
 
 Here is sample provisioner. Please tweak the file as per your requirement.
 
