@@ -7,18 +7,17 @@ For this workshop, I have created two EKS Clusters.
 | # | Cluster | Description  |
 | -------- | -------- | -------- |
 | 1     | acme-ca-us-east-1 | EKS Cluster with Cluster AutoScaler     |
-| 2     | acme-karpenter-us-east-1 | EKS Cluster with Cluster AutoScaler     |
+| 2     | acme-karpenter-us-east-1 | EKS Cluster with Karpenter AutoScaler     |
 
 
 Terraform snippets for creating VPCs and EKS Cluster Resources are available in the terraform directory
-
 
 
 ---
 
 **Setup Lab Environment**
 
-1. Clone Repo git@github.com:dijeesh/eks-karpenter-workshop.git
+1. Clone Repo [eks-karpenter-workshop](git@github.com:dijeesh/eks-karpenter-workshop.git)
 
 2. Update Terraform provider.tf and state.tf
     ```
