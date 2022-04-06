@@ -12,7 +12,7 @@ locals {
   eks_iam_autoscaling_workernode                        = "iam-policy-acme-karpenter-eks-cluster-autoscaling"
   eks_iam_secrets_read_workernode                       = "iam-policy-acme-karpenter-eks-secrets-readonly"
   eks_managed_worker_nodes_desired_size                 = 1
-  eks_managed_worker_nodes_max_size                     = 10
+  eks_managed_worker_nodes_max_size                     = 1
   eks_managed_worker_nodes_min_size                     = 1
   eks_managed_worker_nodes_ami_type                     = "AL2_x86_64"
   eks_managed_worker_nodes_disk_size                    = "40"
