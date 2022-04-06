@@ -1,8 +1,10 @@
 # eks-karpenter-workshop
 
-For this workshop, I have created two EKS Clusters. 
+For this workshop, We will be creating two EKS Clusters. 
 
-
+<center>
+![](src/karepnter-demo.png)
+</center>
 
 | # | Cluster | Description  |
 | -------- | -------- | -------- |
