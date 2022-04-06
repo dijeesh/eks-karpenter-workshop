@@ -44,7 +44,7 @@ KarpenterNodeRole = KarpenterNodeRole-YOUR-EKS-CLUSTER-NAME
 
 <br>
 
-### **4. Edit aws-config configMap** 
+### **4. Edit aws-auth configMap** 
 
 <br>
 Edit aws-config configMap in kube-system namespace and provide enough permission for KarpenterNodeRole IAM Role
