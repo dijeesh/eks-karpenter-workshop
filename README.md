@@ -10,7 +10,7 @@ For this workshop, I have created two EKS Clusters.
 | 2     | acme-karpenter-us-east-1 | EKS Cluster with Karpenter AutoScaler     |
 
 
-Terraform snippets for creating VPCs and EKS Cluster Resources are available in the terraform directory
+Terraform snippets for creating VPCs and EKS Cluster Resources are available in the [terraform](https://github.com/dijeesh/eks-karpenter-workshop/tree/main/terraform) directory
 
 
 ---
