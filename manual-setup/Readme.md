@@ -1,14 +1,13 @@
-Steps for deploying karpenter.sh Cluster AutoScaler on your existing EKS Clusters.
+# Steps for deploying karpenter.sh Cluster AutoScaler on your existing EKS Clusters.
 
-**1. Create tags for your EKS Cluster**
-
+### **1. Create tags for your EKS Cluster**
 Go to EKS Console > Select Cluster > Configuration > Tag > Manage Tags
     
 Add `karpenter.sh/discovery=YOUR-EKS-CLUSTER-NAME`
 
 <br>
 
-**2. Create tags for your VPC Subnets**
+### **2. Create tags for your VPC Subnets**
 
 Go to VPC Console > Select Subnets >  Tags > Manage Tags
     
@@ -18,7 +17,7 @@ Add tags for the VPC Subnets in which you are planning to provision the EKS Work
 
 <br>
 
-**3. Create IAM Resources**
+### **3. Create IAM Resources**
     
     
 
@@ -42,7 +41,7 @@ KarpenterNodeRole = KarpenterNodeRole-YOUR-EKS-CLUSTER-NAME
 - Make sure to update your EKS Cluster Name. Replace `YOUR-EKS-CLUSTER-NAME` with your Cluster Name.
 <br>
 
-**4. Edit aws-config configMap** 
+### **4. Edit aws-config configMap** 
 
 Edit aws-config configMap in kube-system namespace and provide enough permission for KarpenterNodeRole IAM Role
 
@@ -57,7 +56,7 @@ Edit aws-config configMap in kube-system namespace and provide enough permission
 
 Replace `YOUR-EKS-CLUSTER-NAME` and `YOUR-ACCOUNT-ID` and append the above snippet under mapRoles.
 
-**5. Create the KarpenterController IAM Role**
+### **5. Create the KarpenterController IAM Role**
 
 IAM role to be associated with the Kubernetes service account used by Karpenter.
 
@@ -88,13 +87,13 @@ Go to IAM Console > Roles > Create Role > KarpenterControllerRole-YOUR-EKS-CLUST
 ```
 - In the permissions, select KarpenterControllerPolicy-YOUR-EKS-CLUSTER-NAME	IAM policy we created in Step 3.
 
-**6. Create the EC2 Spot Service Linked Role**
+### **6. Create the EC2 Spot Service Linked Role**
 
 ```
 aws iam create-service-linked-role --aws-service-name spot.amazonaws.com || true
 ```
 
-**7. Install Karpenter Helm Chart**
+### **7. Install Karpenter Helm Chart**
 
 ```
 helm repo add karpenter https://charts.karpenter.sh/
@@ -118,7 +117,7 @@ Make sure to replace the values for YOUR-EKS-CLUSTER-NAME, YOUR-ACCOUNT-ID, YOUR
 
 Make sure to set the latest version for Karpenter Chart.
 
-**8. Deploy Provisioner**
+### **8. Deploy Provisioner**
 
 Here is sample provisioner. Please tweak the file as per your requirement.
 
